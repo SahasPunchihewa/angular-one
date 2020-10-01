@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector:'app-person-input',
@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 
 export class PersonInputComponent
 {
+  @Output() PersonCreate=new EventEmitter<String>();
   EnterdPersonName='';
   OnCreatePerson()
   {
     console.log('created a person : '+this.EnterdPersonName);
+    this.PersonCreate.emit(this.EnterdPersonName);
     this.EnterdPersonName='';
   }
 }

@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-one';
   persons=['Max','Ava','Ann'];
+  OnPersonCreated(name:string)
+  {
+    this.persons.push(name);
+  }
 }
